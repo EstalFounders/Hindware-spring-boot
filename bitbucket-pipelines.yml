@@ -29,5 +29,4 @@ pipelines:
               variables:
                HEROKU_API_KEY: 7df069b4-c60a-4dd4-9b4b-c114e9d2e213
                HEROKU_APP_NAME: 'estal-spring-boot'
-               ZIP_FILE: 'estal-spring-boot.tar.gz'
                WAIT: 'true' # wait for build completion and exit the pipe
