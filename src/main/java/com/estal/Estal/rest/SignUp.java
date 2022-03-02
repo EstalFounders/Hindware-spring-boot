@@ -19,8 +19,4 @@ public class SignUp {
        return "User stored successfully";
     }
 
-    @GetMapping("/test")
-    public String testing() {
-        return  "testing for heroku working";
-    }
 }
