@@ -19,4 +19,10 @@ public class SignUp {
        return "User stored successfully";
     }
 
+    @GetMapping("/testing")
+    public String testing()
+    {
+        return "Testing for deployment";
+    }
+
 }
