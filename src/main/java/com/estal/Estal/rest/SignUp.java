@@ -22,7 +22,7 @@ public class SignUp {
     @GetMapping("/testing")
     public String testing()
     {
-        return "Testing for deployment";
+        return "Testing for automatic deployment";
     }
 
 }

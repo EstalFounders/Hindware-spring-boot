@@ -21,7 +21,7 @@ public class UserEntity {
     @Column(name = "`user_id`")
     public Long user_id;
 
-    @Column(name = "`useername`")
+    @Column(name = "`name`")
     public String user_name;
 
     @Column(name = "`email`")
@@ -43,9 +43,6 @@ public class UserEntity {
     @Column(name = "`time`")
     public Time time;
 
-    @Column(name = "`login_failed`")
-    public int login_failed;
-
     @Column(name = "`group_by`")
     public String group_by;
 
@@ -55,7 +52,7 @@ public class UserEntity {
     public UserEntity() {
     }
 
-    public UserEntity(int index, Long user_id, String user_name, String email, String password, Date dob, String address, int mobile_number, Time time, int login_failed) {
+    public UserEntity(int index, Long user_id, String user_name, String email, String password, Date dob, String address, int mobile_number, Time time) {
         this.index = index;
         this.user_id = user_id;
         this.user_name = user_name;
@@ -65,7 +62,6 @@ public class UserEntity {
         this.address = address;
         this.mobile_number = mobile_number;
         this.time = time;
-        this.login_failed = login_failed;
     }
 
     public int getIndex() {
@@ -140,14 +136,6 @@ public class UserEntity {
         this.time = time;
     }
 
-    public int getLogin_failed() {
-        return login_failed;
-    }
-
-    public void setLogin_failed(int login_failed) {
-        this.login_failed = login_failed;
-    }
-
     public String getGroup_by() {
         return group_by;
     }
@@ -176,7 +164,6 @@ public class UserEntity {
                 ", address='" + address + '\'' +
                 ", mobile_number=" + mobile_number +
                 ", time=" + time +
-                ", login_failed=" + login_failed +
                 ", group_by='" + group_by + '\'' +
                 ", created_at='" + created_at + '\'' +
                 '}';
