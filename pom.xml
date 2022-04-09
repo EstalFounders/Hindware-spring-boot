@@ -38,12 +38,36 @@
 		</dependency>
 
 		<dependency>
+<<<<<<< HEAD
+			<groupId>org.apache.httpcomponents</groupId>
+			<artifactId>httpclient</artifactId>
+			<scope>test</scope>
+		</dependency>
+
+		<dependency>
+=======
+>>>>>>> dfa57a0884023302a0e9133c0c4206764600ee76
 			<groupId>mysql</groupId>
 			<artifactId>mysql-connector-java</artifactId>
 			<version>8.0.27</version>
 		</dependency>
 
 		<dependency>
+<<<<<<< HEAD
+			<groupId>com.10duke.client.jwt</groupId>
+			<artifactId>jjwt</artifactId>
+			<version>1.1.0</version>
+		</dependency>
+
+		<dependency>
+			<groupId>org.glassfish.jersey.examples</groupId>
+			<artifactId>jaxb</artifactId>
+			<version>3.0.4</version>
+		</dependency>
+
+		<dependency>
+=======
+>>>>>>> dfa57a0884023302a0e9133c0c4206764600ee76
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-test</artifactId>
 			<scope>test</scope>
@@ -53,6 +77,13 @@
 			<artifactId>spring-security-test</artifactId>
 			<scope>test</scope>
 		</dependency>
+<<<<<<< HEAD
+		<dependency>
+			<groupId>org.projectlombok</groupId>
+			<artifactId>lombok</artifactId>
+		</dependency>
+=======
+>>>>>>> dfa57a0884023302a0e9133c0c4206764600ee76
 	</dependencies>
 
 	<build>
