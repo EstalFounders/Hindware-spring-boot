@@ -2,18 +2,10 @@ package com.estal.Estal.entity;
 
 
 
-<<<<<<< HEAD
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.Table;
-=======
-import org.hibernate.annotations.CreationTimestamp;
-import org.springframework.beans.factory.annotation.Value;
-
-import javax.persistence.*;
-import java.sql.Time;
->>>>>>> dfa57a0884023302a0e9133c0c4206764600ee76
 import java.sql.Timestamp;
 import java.util.Date;
 
@@ -38,10 +30,6 @@ public class UserEntity {
     public String password;
 
     @Column(name = "`DOB`")
-<<<<<<< HEAD
-=======
-    @CreationTimestamp
->>>>>>> dfa57a0884023302a0e9133c0c4206764600ee76
     public Date dob;
 
     @Column(name = "`address`")
@@ -51,11 +39,7 @@ public class UserEntity {
     public int mobile_number;
 
     @Column(name = "`time`")
-<<<<<<< HEAD
     public Timestamp timeStamp;
-=======
-    public Time time;
->>>>>>> dfa57a0884023302a0e9133c0c4206764600ee76
 
     @Column(name = "`group_by`")
     public String group_by;
@@ -63,7 +47,6 @@ public class UserEntity {
     @Column(name = "`Created_at`")
     public String created_at;
 
-<<<<<<< HEAD
 
 
     public UserEntity() {
@@ -71,12 +54,6 @@ public class UserEntity {
     }
 
     public UserEntity(int index, Long user_id, String user_name, String email, String password, Date dob, String address, int mobile_number, Timestamp timeStamp, String group_by, String created_at) {
-=======
-    public UserEntity() {
-    }
-
-    public UserEntity(int index, Long user_id, String user_name, String email, String password, Date dob, String address, int mobile_number, Time time) {
->>>>>>> dfa57a0884023302a0e9133c0c4206764600ee76
         this.index = index;
         this.user_id = user_id;
         this.user_name = user_name;
@@ -85,13 +62,9 @@ public class UserEntity {
         this.dob = dob;
         this.address = address;
         this.mobile_number = mobile_number;
-<<<<<<< HEAD
         this.timeStamp = timeStamp;
         this.group_by = group_by;
         this.created_at = created_at;
-=======
-        this.time = time;
->>>>>>> dfa57a0884023302a0e9133c0c4206764600ee76
     }
 
     public int getIndex() {
@@ -158,21 +131,12 @@ public class UserEntity {
         this.mobile_number = mobile_number;
     }
 
-<<<<<<< HEAD
     public Timestamp getTimeStamp() {
         return timeStamp;
     }
 
     public void setTimeStamp(Timestamp timeStamp) {
         this.timeStamp = timeStamp;
-=======
-    public Time getTime() {
-        return time;
-    }
-
-    public void setTime(Time time) {
-        this.time = time;
->>>>>>> dfa57a0884023302a0e9133c0c4206764600ee76
     }
 
     public String getGroup_by() {
@@ -202,11 +166,7 @@ public class UserEntity {
                 ", dob=" + dob +
                 ", address='" + address + '\'' +
                 ", mobile_number=" + mobile_number +
-<<<<<<< HEAD
                 ", timeStamp=" + timeStamp +
-=======
-                ", time=" + time +
->>>>>>> dfa57a0884023302a0e9133c0c4206764600ee76
                 ", group_by='" + group_by + '\'' +
                 ", created_at='" + created_at + '\'' +
                 '}';
