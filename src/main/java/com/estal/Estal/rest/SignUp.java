@@ -1,4 +1,4 @@
-package com.estal.Estal.controller;
+package com.estal.Estal.rest;
 
 
 import com.estal.Estal.entity.UserEntity;
@@ -7,7 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
-@RequestMapping("/estal/signup")
+@RequestMapping("/api/signup")
 public class SignUp {
 
     @Autowired
@@ -17,6 +17,12 @@ public class SignUp {
     public String saveTheUser(@RequestBody UserEntity userEntity) {
         userService.saveTheUser(userEntity);
        return "User stored successfully";
+    }
+
+    @GetMapping("/testing")
+    public String testing()
+    {
+        return "Testing for automatic deployment";
     }
 
 }
