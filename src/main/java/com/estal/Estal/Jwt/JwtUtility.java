@@ -1,4 +1,4 @@
-package com.estal.Estal.utils;
+package com.estal.Estal.Jwt;
 
 
 import io.jsonwebtoken.Claims;

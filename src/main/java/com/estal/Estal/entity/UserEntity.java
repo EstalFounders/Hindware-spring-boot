@@ -12,43 +12,49 @@ import java.util.Date;
 @Entity
 @Table(name = "`USER_SIGNUP`")
 public class UserEntity {
-    @Id
-    @Column(name = "`USER_ID`")
-    public int user_id;
 
-    @Column(name = "`USER-NAME`")
+    @Column(name = "`index`")
+    public int index;
+
+    @Id
+    @Column(name = "`user_id`")
+    public Long user_id;
+
+    @Column(name = "`name`")
     public String user_name;
 
-    @Column(name = "`EMAIL`")
+    @Column(name = "`email`")
     public String email;
 
-    @Column(name = "`PASSWORD`")
+    @Column(name = "`password`")
     public String password;
 
-    @Column(name = "`DATE-OF-BIRTH`")
+    @Column(name = "`DOB`")
     public Date dob;
 
-    @Column(name = "`ADDRESS`")
+    @Column(name = "`address`")
     public String address;
 
-    @Column(name = "`MOBILE-NUMBER`")
+    @Column(name = "`mobile_no`")
     public int mobile_number;
 
-    @Column(name = "`TIMESTAMP`")
+    @Column(name = "`time`")
     public Timestamp timeStamp;
 
-    @Column(name = "`LOGIN-FAILED`")
-    public int login_failed;
-
-    @Column(name = "`GROUP-BY`")
+    @Column(name = "`group_by`")
     public String group_by;
+
+    @Column(name = "`Created_at`")
+    public String created_at;
+
 
 
     public UserEntity() {
 
     }
 
-    public UserEntity(int user_id, java.lang.String user_name, java.lang.String email, java.lang.String password, Date dob, java.lang.String address, int mobile_number, Timestamp timeStamp, int login_failed, java.lang.String group_by) {
+    public UserEntity(int index, Long user_id, String user_name, String email, String password, Date dob, String address, int mobile_number, Timestamp timeStamp, String group_by, String created_at) {
+        this.index = index;
         this.user_id = user_id;
         this.user_name = user_name;
         this.email = email;
@@ -57,39 +63,47 @@ public class UserEntity {
         this.address = address;
         this.mobile_number = mobile_number;
         this.timeStamp = timeStamp;
-        this.login_failed = login_failed;
         this.group_by = group_by;
+        this.created_at = created_at;
     }
 
-    public int getUser_id() {
+    public int getIndex() {
+        return index;
+    }
+
+    public void setIndex(int index) {
+        this.index = index;
+    }
+
+    public Long getUser_id() {
         return user_id;
     }
 
-    public void setUser_id(int user_id) {
+    public void setUser_id(Long user_id) {
         this.user_id = user_id;
     }
 
-    public java.lang.String getUser_name() {
+    public String getUser_name() {
         return user_name;
     }
 
-    public void setUser_name(java.lang.String user_name) {
+    public void setUser_name(String user_name) {
         this.user_name = user_name;
     }
 
-    public java.lang.String getEmail() {
+    public String getEmail() {
         return email;
     }
 
-    public void setEmail(java.lang.String email) {
+    public void setEmail(String email) {
         this.email = email;
     }
 
-    public java.lang.String getPassword() {
+    public String getPassword() {
         return password;
     }
 
-    public void setPassword(java.lang.String password) {
+    public void setPassword(String password) {
         this.password = password;
     }
 
@@ -101,11 +115,11 @@ public class UserEntity {
         this.dob = dob;
     }
 
-    public java.lang.String getAddress() {
+    public String getAddress() {
         return address;
     }
 
-    public void setAddress(java.lang.String address) {
+    public void setAddress(String address) {
         this.address = address;
     }
 
@@ -125,35 +139,36 @@ public class UserEntity {
         this.timeStamp = timeStamp;
     }
 
-    public int getLogin_failed() {
-        return login_failed;
-    }
-
-    public void setLogin_failed(int login_failed) {
-        this.login_failed = login_failed;
-    }
-
-    public java.lang.String getGroup_by() {
+    public String getGroup_by() {
         return group_by;
     }
 
-    public void setGroup_by(java.lang.String group_by) {
+    public void setGroup_by(String group_by) {
         this.group_by = group_by;
     }
 
+    public String getCreated_at() {
+        return created_at;
+    }
+
+    public void setCreated_at(String created_at) {
+        this.created_at = created_at;
+    }
+
     @Override
-    public java.lang.String toString() {
+    public String toString() {
         return "UserEntity{" +
-                "user_id=" + user_id +
+                "index=" + index +
+                ", user_id=" + user_id +
                 ", user_name='" + user_name + '\'' +
                 ", email='" + email + '\'' +
                 ", password='" + password + '\'' +
                 ", dob=" + dob +
                 ", address='" + address + '\'' +
                 ", mobile_number=" + mobile_number +
-                ", String='" + timeStamp + '\'' +
-                ", login_failed=" + login_failed +
+                ", timeStamp=" + timeStamp +
                 ", group_by='" + group_by + '\'' +
+                ", created_at='" + created_at + '\'' +
                 '}';
     }
 }

@@ -38,9 +38,27 @@
 		</dependency>
 
 		<dependency>
+			<groupId>org.apache.httpcomponents</groupId>
+			<artifactId>httpclient</artifactId>
+			<scope>test</scope>
+		</dependency>
+
+		<dependency>
 			<groupId>mysql</groupId>
 			<artifactId>mysql-connector-java</artifactId>
 			<version>8.0.27</version>
+		</dependency>
+
+		<dependency>
+			<groupId>com.10duke.client.jwt</groupId>
+			<artifactId>jjwt</artifactId>
+			<version>1.1.0</version>
+		</dependency>
+
+		<dependency>
+			<groupId>org.glassfish.jersey.examples</groupId>
+			<artifactId>jaxb</artifactId>
+			<version>3.0.4</version>
 		</dependency>
 
 		<dependency>
@@ -52,6 +70,10 @@
 			<groupId>org.springframework.security</groupId>
 			<artifactId>spring-security-test</artifactId>
 			<scope>test</scope>
+		</dependency>
+		<dependency>
+			<groupId>org.projectlombok</groupId>
+			<artifactId>lombok</artifactId>
 		</dependency>
 	</dependencies>
 
