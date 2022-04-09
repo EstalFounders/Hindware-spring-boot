@@ -7,7 +7,7 @@ import javax.transaction.Transactional;
 
 
 @Transactional
-public interface UserRepository extends JpaRepository<UserEntity, Integer> {
+public interface UserRepository extends JpaRepository<UserEntity, Long> {
   // write custom methods here
 
 }

@@ -17,6 +17,7 @@ public class SignUp {
     UserService userService;
 
     @PostMapping("/saveTheUser")
+
     public String saveTheUser(@RequestBody UserEntity userEntity) {
         userService.saveTheUser(userEntity);
        return "User stored successfully";

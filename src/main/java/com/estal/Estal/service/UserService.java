@@ -7,6 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.UUID;
 
 @Service
 public class UserService {
@@ -14,8 +15,12 @@ public class UserService {
     @Autowired
     UserRepository userRepository;
 
-
     public UserEntity saveTheUser( UserEntity userEntity) {
-         return  userRepository.save(userEntity);
+        Long uuid = UUID.randomUUID().getLeastSignificantBits();
+
+        userEntity.setUser_id(uuid);
+
+
+        return  userRepository.save(userEntity);
     }
 }
