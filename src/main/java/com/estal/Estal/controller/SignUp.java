@@ -26,5 +26,4 @@ public class SignUp {
             return "Something went wrong , Please try again";
         }
     }
-
 }
