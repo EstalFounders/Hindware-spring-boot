@@ -36,10 +36,11 @@ public class UserEntity {
     public String address;
 
     @Column(name = "`mobile_no`")
-    public int mobile_number;
+    public String mobile_no;
 
     @Column(name = "`time`")
     public Timestamp timeStamp;
+    public Timestamp timestamp;
 
     @Column(name = "`group_by`")
     public String group_by;
@@ -47,13 +48,11 @@ public class UserEntity {
     @Column(name = "`Created_at`")
     public String created_at;
 
-
-
     public UserEntity() {
 
     }
 
-    public UserEntity(int index, Long user_id, String user_name, String email, String password, Date dob, String address, int mobile_number, Timestamp timeStamp, String group_by, String created_at) {
+    public UserEntity(int index, Long user_id, String user_name, String email, String password, Date dob, String address, String mobile_no, Timestamp timeStamp, Timestamp timestamp, String group_by, String created_at) {
         this.index = index;
         this.user_id = user_id;
         this.user_name = user_name;
@@ -61,8 +60,9 @@ public class UserEntity {
         this.password = password;
         this.dob = dob;
         this.address = address;
-        this.mobile_number = mobile_number;
+        this.mobile_no = mobile_no;
         this.timeStamp = timeStamp;
+        this.timestamp = timestamp;
         this.group_by = group_by;
         this.created_at = created_at;
     }
@@ -123,12 +123,12 @@ public class UserEntity {
         this.address = address;
     }
 
-    public int getMobile_number() {
-        return mobile_number;
+    public String getMobile_no() {
+        return mobile_no;
     }
 
-    public void setMobile_number(int mobile_number) {
-        this.mobile_number = mobile_number;
+    public void setMobile_no(String mobile_no) {
+        this.mobile_no = mobile_no;
     }
 
     public Timestamp getTimeStamp() {
@@ -137,6 +137,14 @@ public class UserEntity {
 
     public void setTimeStamp(Timestamp timeStamp) {
         this.timeStamp = timeStamp;
+    }
+
+    public Timestamp getTimestamp() {
+        return timestamp;
+    }
+
+    public void setTimestamp(Timestamp timestamp) {
+        this.timestamp = timestamp;
     }
 
     public String getGroup_by() {
@@ -165,8 +173,9 @@ public class UserEntity {
                 ", password='" + password + '\'' +
                 ", dob=" + dob +
                 ", address='" + address + '\'' +
-                ", mobile_number=" + mobile_number +
+                ", mobile_no='" + mobile_no + '\'' +
                 ", timeStamp=" + timeStamp +
+                ", timestamp=" + timestamp +
                 ", group_by='" + group_by + '\'' +
                 ", created_at='" + created_at + '\'' +
                 '}';

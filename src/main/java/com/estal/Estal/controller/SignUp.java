@@ -13,10 +13,17 @@ public class SignUp {
     @Autowired
     UserService userService;
 
+
+
     @PostMapping("/saveTheUser")
     public String saveTheUser(@RequestBody UserEntity userEntity) {
-        userService.saveTheUser(userEntity);
-       return "User stored successfully";
+        try {
+            System.out.println(userEntity + "checking for what is coming");
+            userService.saveTheUser(userEntity);
+            return "User stored successfully";
+        } catch (Exception e) {
+            e.printStackTrace();
+            return "Something went wrong , Please try again";
+        }
     }
-
 }
