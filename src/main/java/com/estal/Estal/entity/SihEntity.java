@@ -8,8 +8,8 @@ import javax.persistence.Id;
 import javax.persistence.Table;
 
 @Entity
-@Table(name = "`South-india-Head`")
-public class sihEntity {
+@Table(name = "`SouthIndiaHead`")
+public class SihEntity {
 
     @Column(name = "`index`")
     public int index;
@@ -30,11 +30,11 @@ public class sihEntity {
     @Column(name = "`email`")
     public String email;
 
-    public sihEntity() {
+    public SihEntity() {
 
     }
 
-    public sihEntity(int index, Long sihId, String userName, String mobileNo, String password, String email) {
+    public SihEntity(int index, Long sihId, String userName, String mobileNo, String password, String email) {
         this.index = index;
         this.sihId = sihId;
         this.userName = userName;

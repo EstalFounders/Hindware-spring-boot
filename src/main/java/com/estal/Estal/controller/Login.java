@@ -3,6 +3,7 @@ package com.estal.Estal.controller;
 import com.estal.Estal.Jwt.JwtUtil;
 import com.estal.Estal.Models.AuthenticationRequest;
 import com.estal.Estal.Models.AuthenticationResponse;
+import com.estal.Estal.dao.UserRepository;
 import com.estal.Estal.service.UserLoginService;
 import net.bytebuddy.implementation.bytecode.Throw;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -18,14 +19,15 @@ import org.springframework.web.bind.annotation.*;
 @RequestMapping("/estal/login")
 public class Login {
 
-    @Autowired
-    AuthenticationManager authenticationManager;
 
     @Autowired
-    UserLoginService userLoginService;
+    private AuthenticationManager authenticationManager;
 
     @Autowired
-    JwtUtil jwtUtil;
+    private UserLoginService userLoginService;
+
+    @Autowired
+    private JwtUtil jwtUtil;
 
     @PostMapping("/authenticate")
     public ResponseEntity authenticate(@RequestBody AuthenticationRequest authenticationRequest) throws Exception {
