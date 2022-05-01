@@ -16,4 +16,5 @@ public class UserLoginService implements UserDetailsService {
     public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
         return new User("admin","password", new ArrayList<>());
     }
+
 }
