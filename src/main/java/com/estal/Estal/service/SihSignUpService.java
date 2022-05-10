@@ -15,22 +15,15 @@ public class SihSignUpService {
 
     @Autowired
     UserRepository userRepository;
-<<<<<<< HEAD
-=======
 
     @Autowired
     PasswordEncoder passwordEncoder;
->>>>>>> main
 
     public SihEntity saveTheUser(SihEntity userEntity) {
         Long uuid = UUID.randomUUID().getLeastSignificantBits();
         userEntity.setSihId(uuid);
         userEntity.setPassword(passwordEncoder.encode(userEntity.getPassword()));
 
-<<<<<<< HEAD
-
-=======
->>>>>>> main
         return  userRepository.save(userEntity);
     }
 }
