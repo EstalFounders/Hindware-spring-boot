@@ -4,6 +4,7 @@ import com.estal.Estal.Jwt.JwtUtil;
 import com.estal.Estal.Models.AuthenticationRequest;
 import com.estal.Estal.Models.AuthenticationResponse;
 import com.estal.Estal.dao.UserRepository;
+import com.estal.Estal.entity.SihEntity;
 import com.estal.Estal.service.UserLoginService;
 import net.bytebuddy.implementation.bytecode.Throw;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -40,6 +41,11 @@ public class Login {
              throw new Exception("Something went wrong in authentication", e);
          }
     }
+
+//    @GetMapping("/getUserDetails")
+//    public SihEntity getUserDetails() {
+//
+//    }
 
 
     @GetMapping("/testing")

@@ -8,7 +8,7 @@ import javax.persistence.Id;
 import javax.persistence.Table;
 
 @Entity
-@Table(name = "`SouthIndiaHead`")
+@Table(name = "`sql6490870.SouthIndiaHead`")
 public class SihEntity {
 
     @Column(name = "`index`")

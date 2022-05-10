@@ -12,7 +12,7 @@ import javax.transaction.Transactional;
 public interface UserRepository extends JpaRepository<SihEntity, Long> {
   // write custom methods here
 
-  @Query(value = "SELECT * FROM Hindware.`SouthIndiaHead` WHERE  user_name = :username", nativeQuery = true)
+  @Query(value = "SELECT * FROM sql6490870.SouthIndiaHead WHERE user_name = :username", nativeQuery = true)
   SihEntity findByUsername(String username);
 
 }
