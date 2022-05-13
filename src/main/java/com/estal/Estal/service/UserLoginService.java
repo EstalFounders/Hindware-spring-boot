@@ -28,6 +28,11 @@ public class UserLoginService implements UserDetailsService {
         return new User(sihEntity.getUserName(), sihEntity.password, new ArrayList<>());
     }
 
-
+    public SihEntity getUserDetails(String username) {
+        if (userRepository.findByUsername(username) != null) {
+            return userRepository.findByUsername(username);
+        }
+        return null;
+    }
 
 }

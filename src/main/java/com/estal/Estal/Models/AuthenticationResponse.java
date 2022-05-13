@@ -1,12 +1,18 @@
 package com.estal.Estal.Models;
 
 
+import org.springframework.stereotype.Component;
 
+@Component
 public class AuthenticationResponse {
-    private final String jwt;
+    private String jwt;
 
     public AuthenticationResponse(String jwt) {
         this.jwt = jwt;
+    }
+
+    public AuthenticationResponse() {
+
     }
 
     public String getJwt() {

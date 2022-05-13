@@ -1,6 +1,10 @@
 package com.estal.Estal.Models;
 
 
+import org.springframework.context.annotation.ComponentScan;
+import org.springframework.stereotype.Component;
+
+@ComponentScan()
 public class AuthenticationRequest {
 
     private String username;
@@ -8,11 +12,6 @@ public class AuthenticationRequest {
 
     public AuthenticationRequest() {
 
-    }
-
-    public AuthenticationRequest(String username, String password) {
-        this.username = username;
-        this.password = password;
     }
 
     public String getUsername() {

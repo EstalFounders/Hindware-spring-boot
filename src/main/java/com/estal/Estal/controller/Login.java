@@ -30,22 +30,31 @@ public class Login {
     @Autowired
     private JwtUtil jwtUtil;
 
+
     @PostMapping("/authenticate")
-    public ResponseEntity authenticate(@RequestBody AuthenticationRequest authenticationRequest) throws Exception {
+    public SihEntity authenticate(@RequestBody AuthenticationRequest authenticationRequest) throws Exception {
          try {
              UserDetails userDetails = userLoginService.loadUserByUsername(authenticationRequest.getUsername());
              final String jwt = jwtUtil.generateToken(userDetails);
-
-             return ResponseEntity.ok(new AuthenticationResponse(jwt));
+             if (ResponseEntity.ok(new AuthenticationResponse(jwt)) != null) {
+                 return this.getUserDetails(authenticationRequest);
+             } else {
+                 throw new Exception("Something went wrong in login, Maybe Wrong credentials") ;
+             }
          } catch (Exception e) {
              throw new Exception("Something went wrong in authentication", e);
          }
     }
 
-//    @GetMapping("/getUserDetails")
-//    public SihEntity getUserDetails() {
-//
-//    }
+    @GetMapping("/getUserDetails")
+    public SihEntity getUserDetails(AuthenticationRequest authenticationRequest) {
+        try {
+            return userLoginService.getUserDetails(authenticationRequest.getUsername());
+        } catch (Exception e) {
+            return null;
+        }
+    }
+
 
 
     @GetMapping("/testing")
