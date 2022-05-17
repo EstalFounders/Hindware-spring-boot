@@ -8,10 +8,10 @@
 		<version>2.6.3</version>
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
-	<groupId>com..estal</groupId>
-	<artifactId>Estal</artifactId>
+	<groupId>com..hindware</groupId>
+	<artifactId>hindware</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>Estal</name>
+	<name>hindware</name>
 	<description>Demo project for Spring Boot</description>
 	<properties>
 		<java.version>1.8</java.version>
@@ -20,6 +20,12 @@
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-data-jpa</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>io.github.qsy7.java.dependencies</groupId>
+			<artifactId>hibernate</artifactId>
+			<version>0.1.2</version>
+			<type>pom</type>
 		</dependency>
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
