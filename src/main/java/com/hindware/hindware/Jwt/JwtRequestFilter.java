@@ -16,34 +16,34 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 
-@Component
-public class JwtRequestFilter extends OncePerRequestFilter {
-
-    @Autowired
-    JwtUtil jwtUtil;
-
-    @Autowired
-    UserLoginService userLoginService;
-
-    @Override
-    protected void doFilterInternal(HttpServletRequest request, HttpServletResponse response, FilterChain filterChain) throws ServletException, IOException {
-        final String authorizationHeader =  request.getHeader("Authorization");
-
-        String jwtToken = null;
-        String username = null;
-        String bearerToken = request.getHeader("Authorization");
-        if (StringUtils.hasText(bearerToken) && bearerToken.startsWith("Bearer ")) {
-            jwtToken = bearerToken.substring(7, bearerToken.length());
-            username = jwtUtil.extractUsername(jwtToken);
-            if (username != null && SecurityContextHolder.getContext().getAuthentication() == null) {
-                UserDetails userDetails = userLoginService.loadUserByUsername(username);
-                if (jwtUtil.validateToken(jwtToken, userDetails)) {
-                    UsernamePasswordAuthenticationToken usernamePasswordAuthenticationToken = new UsernamePasswordAuthenticationToken(userDetails, null, userDetails.getAuthorities());
-                    usernamePasswordAuthenticationToken.setDetails(new WebAuthenticationDetailsSource().buildDetails(request));
-                    SecurityContextHolder.getContext().setAuthentication(usernamePasswordAuthenticationToken);
-                }
-            }
-        }
-        filterChain.doFilter(request, response);
-    }
-}
+//@Component
+//public class JwtRequestFilter extends OncePerRequestFilter {
+//
+//    @Autowired
+//    JwtUtil jwtUtil;
+//
+//    @Autowired
+//    UserLoginService userLoginService;
+//
+//    @Override
+//    protected void doFilterInternal(HttpServletRequest request, HttpServletResponse response, FilterChain filterChain) throws ServletException, IOException {
+//        final String authorizationHeader =  request.getHeader("Authorization");
+//
+//        String jwtToken = null;
+//        String username = null;
+//        String bearerToken = request.getHeader("Authorization");
+//        if (StringUtils.hasText(bearerToken) && bearerToken.startsWith("Bearer ")) {
+//            jwtToken = bearerToken.substring(7, bearerToken.length());
+//            username = jwtUtil.extractUsername(jwtToken);
+//            if (username != null && SecurityContextHolder.getContext().getAuthentication() == null) {
+//                UserDetails userDetails = userLoginService.loadUserByUsername(username);
+//                if (jwtUtil.validateToken(jwtToken, userDetails)) {
+//                    UsernamePasswordAuthenticationToken usernamePasswordAuthenticationToken = new UsernamePasswordAuthenticationToken(userDetails, null, userDetails.getAuthorities());
+//                    usernamePasswordAuthenticationToken.setDetails(new WebAuthenticationDetailsSource().buildDetails(request));
+//                    SecurityContextHolder.getContext().setAuthentication(usernamePasswordAuthenticationToken);
+//                }
+//            }
+//        }
+//        filterChain.doFilter(request, response);
+//    }
+//}

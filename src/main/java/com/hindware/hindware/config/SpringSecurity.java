@@ -1,6 +1,5 @@
 package com.hindware.hindware.config;
 
-import com.hindware.hindware.Jwt.JwtRequestFilter;
 import com.hindware.hindware.service.UserLoginService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
@@ -21,8 +20,8 @@ public class SpringSecurity extends WebSecurityConfigurerAdapter {
     @Autowired
     private UserLoginService userLoginService;
 
-    @Autowired
-    private JwtRequestFilter jwtRequestFilter;
+//    @Autowired
+//    private JwtRequestFilter jwtRequestFilter;
 
 
 
@@ -34,7 +33,7 @@ public class SpringSecurity extends WebSecurityConfigurerAdapter {
 //                          .logout()
 //                                  .deleteCookies("JSESSIONID");
 
-        http.addFilterBefore(jwtRequestFilter, UsernamePasswordAuthenticationFilter.class);
+//        http.addFilterBefore(jwtRequestFilter, UsernamePasswordAuthenticationFilter.class);
 
     }
 
@@ -44,11 +43,11 @@ public class SpringSecurity extends WebSecurityConfigurerAdapter {
     }
 
 
-    @Override
-    protected void configure(AuthenticationManagerBuilder auth) throws Exception {
-        super.configure(auth);
-        auth.userDetailsService(userLoginService);
-    }
+//    @Override
+//    protected void configure(AuthenticationManagerBuilder auth) throws Exception {
+//        super.configure(auth);
+//        auth.userDetailsService(userLoginService);
+//    }
 
     @Override
     @Bean
